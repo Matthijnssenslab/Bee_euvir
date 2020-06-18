@@ -1,0 +1,6 @@
+*.RData
+*.DS_Store
+*.ipynb_checkpoints
+#Large files:
+data/Pcoa/SRA_df_coverage_lengthnorm.tsv
+data/Pcoa/flembee_df_coverage_lengthnorm.tsv
