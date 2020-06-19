@@ -1,6 +1,19 @@
 *.RData
 *.DS_Store
 *.ipynb_checkpoints
-#Large files:
+#Large files (hosted in zenodo):
 data/Pcoa/SRA_df_coverage_lengthnorm.tsv
 data/Pcoa/flembee_df_coverage_lengthnorm.tsv
+data/notebooks_out/flembee_sra_df_coverage_lengthnorm.tsv
+data/notebooks_out/refhits_taxpath.pkl
+data/contigs.skesa.size500.clus9780.taxpath.pkl
+data/notebooks_out/viral_df_taxonomy_SRA.csv
+data/viralcontigs_skesa_round2.tblx
+data/nucl_gb.accession2taxid
+data/TotalBP_lowkmer_9780.m8
+data/EUvirs_refseq_round2.tblx
+data/*BLP
+#Taxdump:
+data/nodesRED.dmp
+data/namesRED.dmp
+data/nucl_gb.accession2taxid
