@@ -25,3 +25,4 @@ The preferred order of running scripts are:
   * Tax.py
   * Taxonomy notebooks
  
+Additional data to large for this repository is housed in zenodo under DOI 10.5281/zenodo.3979324
