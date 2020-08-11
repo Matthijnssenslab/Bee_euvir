@@ -15,7 +15,7 @@ Notebooks are located in the 'Notebooks' folder and include:
 
 Furthermore, the fasta sequences for all viruses included in the phylogenies, as well as the complete contig set are available under the 'fasta' folder.
 
-Some of the generated / included data sits under 'data' folder, the rest is hosted in Zenodo under:
+Some of the generated / included data sits under 'data' folder, the rest is hosted in Zenodo under (DOI 10.5281/zenodo.3979324):
 
 The generated network CSV files are available under the 'networks' folder
 
@@ -25,4 +25,3 @@ The preferred order of running scripts are:
   * Tax.py
   * Taxonomy notebooks
  
-Additional data to large for this repository is housed in zenodo under DOI 10.5281/zenodo.3979324
