@@ -4,10 +4,15 @@ library("phytools")
 library("viridis")
 library("svglite")
 library("gridExtra")
+library("treeio")
 
-########################################### Bunyas:
-bunya <- read.beast("../data/MCC/Bunya.mcctree")
-#Figure out groups:
+setwd("/Users/deboutte/Bioinf/repo/Bee_euvir")
+
+
+# Bunya -------------------------------------------------------------------
+bunya <- read.mrbayes("data/cons_trees/bunya.nex.con.tre")
+
+# Bunya Colors ------------------------------------------------------------
 cls <- list(Unclassified = c('KX884775.1_1',
                              'KX884805.1_1',
                              'KX884807.1_1',
@@ -21,26 +26,24 @@ cls <- list(Unclassified = c('KX884775.1_1',
                              'NC_040759.1_1',
                              'NC_032151.1_1'),
             Phasmaviridae = c('KJ434182.1_1',
-                             'KM817697.1_1',
-                             'KM817698.1_2',
-                             'MH822966.1_1',
-                             'NC_031307.1_1',
-                             'NC_031312.1_2',
-                             'NC_034462.1_1',
-                             'NC_043642.1_1'),
+                              'KM817697.1_1',
+                              'KM817698.1_2',
+                              'MH822966.1_1',
+                              'NC_031307.1_1',
+                              'NC_031312.1_2',
+                              'NC_034462.1_1',
+                              'NC_043642.1_1'),
             Peribunyaviridae = c('KY354237.1_1', 'SRR5109820.Contig_13922_1091.96_length_6449_1'),
             SRA = c('SRR1812786.Contig_29604_62.7809_length_6336_1','SRR2664950.Contig_23840_14.7864_length_6215_1'))
+cols <- c("0" ="#7f7f7f", "Unclassified" = "#7f7f7f","SRA" = "#ff7f0e",
+          "Phasmaviridae" = "#2ca02c","Peribunyaviridae" = "#2ca02c")
 
-
-
-cols <- c("Unclassified" = "#7f7f7f","SRA" = "#1f77b4", "Phasmaviridae" = "#2ca02c","Peribunyaviridae"="#2ca02c")
-cols2 <- c("Unclassified" = "#7f7f7f","SRA" = "#7f7f7f", "Phasmaviridae" = "red","Peribunyaviridae"="yellow")
-
+# Bunya Plot --------------------------------------------------------------
+bunya@phylo <- midpoint.root(bunya@phylo)
 bunya <- groupOTU(bunya, cls)
-
-bunyatree <- ggtree(bunya, aes(color=group), size=5) +
+bunyatree <- ggtree(bunya, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
-  geom_nodepoint(aes(subset = posterior > 0.8), color='black',size=1) + 
+  geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
   #theme(legend.position = c(0.1,0.9), 
   #      legend.title = element_blank(), # no title
@@ -49,37 +52,30 @@ bunyatree <- ggtree(bunya, aes(color=group), size=5) +
   geom_treescale() + 
   scale_colour_manual(values = cols)
 bunyatree
-#ggsave("Treeplots/Bunya.svg",bunyaplot, device = "svg", dpi=320)
+ggsave("treePlots/bunya.svg",bunyatree, device = "svg", dpi=300)
+ggsave("treePlots/bunya.pdf",bunyatree, device = "pdf", dpi=300)
 
-#ggtree(bunya, aes(color=group)) +
-#  geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
-#  geom_nodepoint(aes(subset = posterior > 0.8), color='black') + 
-#  geom_tiplab() + 
-#  theme(legend.position = c(0.1,0.9), 
-#        legend.title = element_blank(), # no title
-#        legend.key = element_blank()) +
-#  xlim(0, 2) +
-#  geom_treescale() + 
-#  scale_colour_manual(values = cols2)
+# Orthomyxo_Bee -----------------------------------------------------------
+orthobee <- read.mrbayes("data/cons_trees/orthomyxo_bee.nex.con.tre")
 
 
-########################################### Orthomyxo_bees:
-orthobee <- read.beast("../data/MCC/OrthomyxoBee.mcctree")
+# Orthomyxo_Bee Colors ----------------------------------------------------
 cls <- list(NODE = c('BP46_PB2PB1PANP','BP47_PB2PB1PANP','BP49_PB2PB1PANP'),
             Influenza = c('AB126193_Influenza_C','FJ969536_Influenza_A','M14880_Influenza_B'),
             Thogotolike = c('GU969313_Dhori','HM627174_Jos','KC506156_Upolu','KC506162_Aransas_Bay','KU708253_Bourbon','Y17873_Thogoto'),
             Quaranja = c('KM114304_Wellfleet_Bay','KX883865_Wuhan_Mosquito_4','KX883876_Jingshan_fly_1','KX883879_Sanxia_water_Strider_3'),
             Isavirus = c('KU587572_Infectious_salmon_anemia'),
             Unclassified = c('KX882061_Rainbow_trout_orthomyxovirus-1','KX882069_Steelhead_trout_orthomyxovirus-1','KX883845_Beihai_orthomyxo-like_1','KX883859_Hubei_earwig_1','KX883884_Hubei_orthoptera_6','KX949591_Sinu','Hubei_orthomyxo-like_2'))
-
-orthobee <- groupOTU(orthobee, cls)
 cols <- c("0" ="#7f7f7f", "Unclassified" = "#7f7f7f","NODE" = "#ff7f0e", "Influenza" = "#2ca02c","Thogotolike"="#2ca02c", "Quaranja"="#2ca02c", "Isavirus"="#2ca02c")
 cols2 <- c("0"="blue","Unclassified" = "#7f7f7f","NODE" = "#ff7f0e", "Influenza" = "red","Thogotolike"="purple", "Quaranja"="yellow", "Isavirus"="black")
 
-orthobeetree <- ggtree(orthobee, aes(color=group), size=5) +
+# Orthomyxo_Bee Plot ------------------------------------------------------
+orthobee@phylo <- midpoint.root(orthobee@phylo)
+orthobee <- groupOTU(orthobee, cls)
+orthobeetree <- ggtree(orthobee, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
-  geom_nodepoint(aes(subset = posterior > 0.8), color='black',size=1) + 
-  #geom_tiplab() + 
+  geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
+  geom_tiplab() + 
   #theme(legend.position = c(0.1,0.9), 
   #      legend.title = element_blank(), # no title
   #      legend.key = element_blank()) +
@@ -87,98 +83,88 @@ orthobeetree <- ggtree(orthobee, aes(color=group), size=5) +
   geom_treescale() + 
   scale_colour_manual(values = cols)
 orthobeetree
-#ggsave("Treeplots/Orthobee.svg",orthobeetree, device = "svg", dpi=320)
-
-#ggtree(orthobee, aes(color=group)) +
-#  geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
-#  geom_nodepoint(aes(subset = posterior > 0.8), color='black') + 
-#  geom_tiplab() + 
-#  theme(legend.position = c(0.1,0.9), 
-#        legend.title = element_blank(), # no title
-#        legend.key = element_blank()) +
-#  xlim(0,4) + 
-#  geom_treescale() + 
-#  scale_colour_manual(values = cols2)
+ggsave("treePlots/orthobee.svg",orthobeetree, device = "svg", dpi=300)
+ggsave("treePlots/orthobee.pdf",orthobeetree, device = "pdf", dpi=300)
 
 
+# Orthomyxo_SRA ---------------------------------------------------------------
+orthosra <- read.mrbayes("data/cons_trees/orthomyxo_sra.nex.con.tre")
 
-
-########################################### orthomyxo_sra:
-orthosra <- read.beast("../data/MCC/OrthomyxoSRA.mcctree")
-cls <- list(NODE = c('BP46_NODE_59_length_2296_cov_1606.73_PB1_1_84_2294_-1_ID=1_1partial=01start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.385'),
-            SRA = c('SRR2064700.Contig_7931_28.6803_length_2416_1_1_2415_1_ID=4_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.366',
-                    'SRR2916026.Contig_21490_12.8872_length_2343_1_2_2341_1_ID=5_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.382',
-                    'SRR3993646.Contig_4218_61.3183_length_2345_1_1_2343_1_ID=6_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.380',
-                    'SRR4301486.Contig_8416_72.6801_length_2424_1_2_2374_-1_ID=7_1partial=10start_type=ATGrbs_motif=TTAArbs_spacer=4bpgc_cont=0.391',
-                    'SRR5885442.Contig_31234_55.8986_length_1924_1_1_1923_1_ID=8_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.410',
-                    'SRR6001380.Contig_6081_137.105_length_2095_1_2_2095_1_ID=9_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.346',
-                    'SRR770031.Contig_2318_75.597_length_2397_1_2_2392_1_ID=10_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.388'),
-            delta = c('KM392504.1_1_2_2287_1_ID=177_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.402',
-                      'KX768818.1_1_2_1654_1_ID=280_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.402'),
-            alpha = c('CY035132.1_1_6_2279_1_ID=67_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.412',
-                      'CY103874.1_1_3_2297_1_ID=90_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.427',
-                      'JQ994252.1_1_1_2286_1_ID=102_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.437',
-                      'KJ856190.1_1_1_2274_1_ID=169_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.419'),
-            beta = c('CY171757.1_1_3_2000_1_ID=149_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.389',
-                     'D00004.1_2_568_2292_1_ID=12_2partial=00start_type=ATGrbs_motif=AACrbs_spacer=5bpgc_cont=0.380',
-                     'EF626634.1_1_1_2280_1_ID=55_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.393',
-                     'KX351451.1_1_1_1941_1_ID=261_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.387',
-                     'MH684310.1_1_1_1764_1_ID=549_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.389'),
-            gamma = c('NC_006308.2_1_3_2282_1_ID=429_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.355'),
-            thogoto = c('AF004985.1_1_2_2158_1_ID=15_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.476',
-                        'HM627170.1_1_1_2136_1_ID=80_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.461',
-                        'KC506157.1_1_1_2196_1_ID=133_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.433',
-                        'KC506163.1_1_46_2196_1_ID=134_1partial=00start_type=ATGrbs_motif=AATAArbs_spacer=14bpgc_cont=0.426',
-                        'KU708254.1_1_1_2172_1_ID=255_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.449',
-                        'KX670390.1_1_3_2351_1_ID=418_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.452',
-                        'LC010982.1_1_1_2151_1_ID=200_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.470',
-                        'M65866.1_1_1_2175_1_ID=13_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.448',
-                        'NC_040731.1_1_3_2174_1_ID=762_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.436'),
-            quaranja = c('KM114305.1_1_2_2344_1_ID=184_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.423',
-                         'KM817616.1_1_526_2340_1_ID=188_1partial=00start_type=ATGrbs_motif=TTAArbs_spacer=4bpgc_cont=0.382',
-                         'KM817617.1_1_1_2370_1_ID=189_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.432',
-                         'KM817619.1_1_2_2383_1_ID=191_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.401',
-                         'KM817620.1_1_2_2356_1_ID=192_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.376',
-                         'KM817621.1_1_390_2405_1_ID=193_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.383',
-                         'KM817622.1_1_1_2406_1_ID=194_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.497',
-                         'KM817623.1_1_113_2425_1_ID=195_1partial=00start_type=ATGrbs_motif=TTAArbs_spacer=10bpgc_cont=0.506',
-                         'KM817624.1_1_3_2423_1_ID=196_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.442',
-                         'KM817625.1_1_10_2409_1_ID=197_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.520',
-                         'KM817626.1_1_1_2340_1_ID=198_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.447',
-                         'KM817627.1_1_3_2135_1_ID=199_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.412',
-                         'KX883875.1_1_2_2392_1_ID=321_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.367',
-                         'MG770333.1_1_2_2368_1_ID=610_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.484',
-                         'MH267793.1_1_3_2246_1_ID=523_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.483',
-                         'MH558140.1_1_34_2112_1_ID=615_1partial=00start_type=ATGrbs_motif=TTAArbs_spacer=4bpgc_cont=0.359',
-                         'MN053836.1_1_43_2391_1_ID=975_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.465',
-                         'MN053837.1_1_3_1565_1_ID=976_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.447',
-                         'MN053838.1_1_3_2159_1_ID=977_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.484'),
-            unclass = c('JQ928944.1_1_1_2367_1_ID=106_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.476',
-                        'KX883844.1_1_1_2370_1_ID=316_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.343',
-                        'KX883858.1_1_2_2410_1_ID=317_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.361',
-                        'KX883868.1_1_14_2461_1_ID=318_1partial=00start_type=ATGrbs_motif=AACrbs_spacer=5bpgc_cont=0.348',
-                        'KX883873.1_1_2_2296_1_ID=319_1partial=11start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.392',
-                        'KX883874.1_1_3_2126_1_ID=320_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.371',
-                        'KX883884.1_1_1_2181_1_ID=323_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.419',
-                        'KX898491.1_1_151_2436_1_ID=340_1partial=00start_type=ATGrbs_motif=TTArbs_spacer=12bpgc_cont=0.470',
-                        'KX949590.1_1_66_2171_1_ID=324_1partial=00start_type=ATGrbs_motif=TTAACTrbs_spacer=12bpgc_cont=0.335',
-                        'MF176325.1_1_3_2384_1_ID=395_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.451',
-                        'MG600038.1_1_1_2256_1_ID=492_1partial=10start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.438',
-                        'MG972988.1_1_73_2478_-1_ID=508_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.431',
-                        'MG972993.1_1_58_2466_-1_ID=509_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.460',
-                        'MK026596.1_1_14_2422_-1_ID=614_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.418',
-                        'MK227173.1_1_34_2385_1_ID=930_1partial=00start_type=ATGrbs_motif=TTAArbs_spacer=4bpgc_cont=0.362',
-                        'MN167480.1_1_52_2478_-1_ID=965_1partial=01start_type=Edgerbs_motif=Nonerbs_spacer=Nonegc_cont=0.453'))
-
-                        
-orthosra <- groupOTU(orthosra, cls)
+# Orthomyxo_SRA Colors ----------------------------------------------------
+cls <- list(NODE = c('BP46_NODE_59_length_2296_cov_1606.73_PB1_1'),
+            SRA = c('SRR2064700.Contig_7931_28.6803_length_2416_1',
+                    'SRR2916026.Contig_21490_12.8872_length_2343_1',
+                    'SRR3993646.Contig_4218_61.3183_length_2345_1',
+                    'SRR4301486.Contig_8416_72.6801_length_2424_1',
+                    'SRR5885442.Contig_31234_55.8986_length_1924_1',
+                    'SRR6001380.Contig_6081_137. 105_length_2095_1',
+                    'SRR770031.Contig_2318_75.597_length_2397_1'),
+            delta = c('KM392504.1',
+                      'KX768818.1'),
+            alpha = c('CY035132.1',
+                      'CY103874.1',
+                      'JQ994252.1',
+                      'KJ856190.1'),
+            beta = c('CY171757.1',
+                     'D00004.1',
+                     'EF626634.1',
+                     'KX351451.1',
+                     'MH684310.1'),
+            gamma = c('NC_006308.2'),
+            thogoto = c('AF004985.1',
+                        'HM627170.1',
+                        'KC506157.1',
+                        'KC506163.1',
+                        'KU708254.1',
+                        'KX670390.1',
+                        'LC010982.1',
+                        'M65866.1',
+                        'NC_040731.1'),
+            quaranja = c('KM114305.1',
+                         'KM817616.1',
+                         'KM817617.1',
+                         'KM817619.1',
+                         'KM817620.1',
+                         'KM817621.1',
+                         'KM817622.1',
+                         'KM817623.1',
+                         'KM817624.1',
+                         'KM817625.1',
+                         'KM817626.1',
+                         'KM817627.1',
+                         'KX883875.1',
+                         'MG770333.1',
+                         'MH267793.1',
+                         'MH558140.1',
+                         'MN053836.1',
+                         'MN053837.1',
+                         'MN053838.1'),
+            unclass = c('JQ928944.1',
+                        'KX883844.1',
+                        'KX883858.1',
+                        'KX883868.1',
+                        'KX883873.1',
+                        'KX883874.1',
+                        'KX883884.1',
+                        'KX898491.1',
+                        'KX949590.1',
+                        'MF176325.1',
+                        'MG600038.1',
+                        'MG972988.1',
+                        'MG972993.1',
+                        'MK026596.1',
+                        'MK227173.1',
+                        'MN167480.1'))
 cols <- c("0" ="#7f7f7f", "unclass" = "#7f7f7f","NODE" = "#ff7f0e","SRA"="#1f77b4", "gamma"="#2ca02c","alpha"="#2ca02c","beta"="#2ca02c","delta"="#2ca02c","thogoto"="#2ca02c","quaranja"="#2ca02c")
 cols2 <- c("0" ="#7f7f7f", "unclass" = "#7f7f7f","NODE" = "#ff7f0e","SRA"="#1f77b4", "gamma"="red","alpha"="red","beta"="red","delta"="red","thogoto"="blue","quaranja"="purple")
 
-orthosratree <- ggtree(orthosra, aes(color=group), size=5) +
+# Orthomyxo_SRA Plot ------------------------------------------------------
+orthosra@phylo <- midpoint.root(orthosra@phylo)
+orthosra <- groupOTU(orthosra, cls)
+orthosratree <- ggtree(orthosra, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
-  geom_nodepoint(aes(subset = posterior > 0.8), color='black',size=1) + 
-  #geom_tiplab() + 
+  geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
+  geom_tiplab() + 
   #theme(legend.position = c(0.1,0.9), 
   #      legend.title = element_blank(), # no title
   #      legend.key = element_blank()) +
@@ -186,46 +172,40 @@ orthosratree <- ggtree(orthosra, aes(color=group), size=5) +
   geom_treescale() + 
   scale_colour_manual(values = cols)
 orthosratree
-#ggsave("Treeplots/orthosra.svg",orthosratree, device = "svg", dpi=380, width = 6.04, height = 10)
-#ggtree(orthosra, aes(color=group)) +
-#  geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
-#  geom_nodepoint(aes(subset = posterior > 0.8), color='black') + 
-#  geom_tiplab() + 
-#  theme(legend.position = c(0.1,0.9), 
-#        legend.title = element_blank(), # no title
-#        legend.key = element_blank()) +
-#  xlim(0,4) + 
-#  geom_treescale() + 
-#  scale_colour_manual(values = cols2)
-########################################### Partiti_refseq:
-partiti <- read.beast("../data/MCC/Partiti.mcctree")
+ggsave("treePlots/orthosra.svg",orthosratree, device = "svg", dpi=300)
+ggsave("treePlots/orthosra.pdf",orthosratree, device = "pdf", dpi=300)
 
-cls <- list(NODE = c('BP15_NODE_21_length_1989_cov_11_700214_1_36_1886_-1_ID=1_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.468',
-                     'BP23_NODE_181_length_1578_cov_4_697323_1_49_1485_-1_ID=3_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.435',
-                     'BP2_NODE_11_length_2442_cov_8_707023_2_166_2406_1_ID=6_2partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.412',
-                     'BP48_NODE_37_length_1861_cov_5_466667_1_79_1788_1_ID=8_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.423',
-                     'BeeP-11-2013_NODE_907_length_1923_cov_7_401408_1_59_1909_1_ID=11_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.460',
-                     'BeeP-32-2013_NODE_32_length_2325_cov_12_654359_1_59_2296_1_ID=16_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.411',
-                     'BeeP-32-2013_NODE_58_length_1715_cov_25_394994_1_80_1513_-1_ID=17_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.453',
-                     'BeeP-33-2013_NODE_5_length_2414_cov_84_842533_1_126_2366_1_ID=19_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.407',
-                     'BeeP-35-2013_NODE_401_length_2385_cov_62_380849_1_71_2308_1_ID=22_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.411',
-                     'BeeP-35-2013_NODE_620_length_1910_cov_20_108565_1_38_1888_1_ID=25_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.451',
-                     'BeeP-35-2013_NODE_899_length_1547_cov_109_939456_2_89_1510_1_ID=28_2partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.416',
-                     'BeeP-37-2013_NODE_115_length_2447_cov_879_975527_1_101_2329_-1_ID=32_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.440',
-                     'BeeP-37-2013_NODE_116_length_2446_cov_659_816800_1_106_2322_1_ID=33_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.407',
-                     'BeeP-37-2013_NODE_164_length_1939_cov_93_179914_1_65_1825_-1_ID=35_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.426',
-                     'BeeP-44-2013_NODE_110_length_1821_cov_96_515482_1_99_1739_-1_ID=42_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.491',
-                     'BeeP-44-2013_NODE_146_length_1607_cov_51_104575_1_49_1485_-1_ID=44_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.427',
-                     'BeeP-44-2013_NODE_94_length_1947_cov_31_678610_1_25_1875_-1_ID=39_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.441',
-                     'BeeP-44-2013_NODE_99_length_1913_cov_780_763617_1_89_1849_1_ID=40_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.443',
-                     'BeeP-47-2013_NODE_67_length_1854_cov_32_899268_1_77_1837_1_ID=46_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.443',
-                     'BeeP-47-2013_NODE_88_length_1610_cov_66_399870_1_104_1537_-1_ID=47_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.434',
-                     'BeeP-49-2013_NODE_249_length_1887_cov_3011_785635_1_121_1809_-1_ID=51_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.503',
-                     'BeeP-49-2013_NODE_255_length_1857_cov_503_888202_1_48_1769_1_ID=52_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.466',
-                     'BeeP-49-2013_NODE_262_length_1819_cov_24_860505_1_76_1761_-1_ID=53_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.488',
-                     'BeeP-49-2013_NODE_307_length_1700_cov_116_550832_1_177_1580_1_ID=58_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.418'),
-            SRA = c('ERR1354112.Contig_10743_83.2701_length_2186_2_727_2160_1_ID=63_2partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.439',
-                    'SRR4002881.Contig_4619_145.602_length_2331_1_26_2266_-1_ID=73_1partial=00start_type=ATGrbs_motif=Nonerbs_spacer=Nonegc_cont=0.411'),
+
+# Partiti -----------------------------------------------------------------
+partiti <- read.mrbayes("data/cons_trees/partiti.nex.con.tre")
+
+# Partiti Colors ----------------------------------------------------------
+cls <- list(NODE = c('BP15_NODE_21_length_1989_cov_11_700214_1',
+                     'BP23_NODE_181_length_1578_cov_4_697323',
+                     'BP2_NODE_11_length_2442_cov_8_707023',
+                     'BP48_NODE_37_length_1861_cov_5_466667_1',
+                     'BeeP-11-2013_NODE_907_length_1923_cov_7_401408_1',
+                     'BeeP-32-2013_NODE_32_length_2325_cov_12_654359_1',
+                     'BeeP-32-2013_NODE_58_length_1715_cov_25_394994_1',
+                     'BeeP-33-2013_NODE_5_length_2414_cov_84_842533_1',
+                     'BeeP-35-2013_NODE_401_length_2385_cov_62_380849_1',
+                     'BeeP-35-2013_NODE_620_length_1910_cov_20_108565_1',
+                     'BeeP-35-2013_NODE_899_length_1547_cov_109_939456_2',
+                     'BeeP-37-2013_NODE_115_length_2447_cov_879_975527_1',
+                     'BeeP-37-2013_NODE_116_length_2446_cov_659_816800_1',
+                     'BeeP-37-2013_NODE_164_length_1939_cov_93_179914_1',
+                     'BeeP-44-2013_NODE_110_length_1821_cov_96_515482_1',
+                     'BeeP-44-2013_NODE_146_length_1607_cov_51_104575_1',
+                     'BeeP-44-2013_NODE_94_length_1947_cov_31_678610_1',
+                     'BeeP-44-2013_NODE_99_length_1913_cov_780_763617_1',
+                     'BeeP-47-2013_NODE_67_length_1854_cov_32_899268_1',
+                     'BeeP-47-2013_NODE_88_length_1610_cov_66_399870_1',
+                     'BeeP-49-2013_NODE_249_length_1887_cov_3011_785635_1',
+                     'BeeP-49-2013_NODE_255_length_1857_cov_503_888202_1',
+                     'BeeP-49-2013_NODE_262_length_1819_cov_24_860505_1',
+                     'BeeP-49-2013_NODE_307_length_1700_cov_116_550832_1'),
+            SRA = c('ERR1354112.Contig_10743_83.2701_length_2186_2',
+                    'SRR4002881.Contig_4619_145.602_length_2331_1'),
             Alpha = c('NC_038827.1_1',
                       'NC_038829.1_1',
                       'NC_038831.1_1',
@@ -253,33 +233,176 @@ cls <- list(NODE = c('BP15_NODE_21_length_1989_cov_11_700214_1_36_1886_-1_ID=1_1
                              'NC_034514.1_1',
                              'NC_040483.1_1',
                              'NC_040496.1_1'))
-partiti <- groupOTU(partiti, cls)
 cols <- c("NODE" = "#ff7f0e","SRA" = "#1f77b4","Alpha" = "#2ca02c","Beta" = "#2ca02c","Gamma" = "#2ca02c","Unclassified" = "#7f7f7f", "0" = "#7f7f7f")
 cols2 <- c("NODE" = "#ff7f0e","SRA" = "#1f77b4","Alpha" = "red","Beta" = "blue","Gamma" = "purple","Unclassified" = "#7f7f7f", "0" = "#7f7f7f")
 
-
-partititree <- ggtree(partiti, aes(color=group),size=5) +
+# Partiti Plot ------------------------------------------------------------
+partiti@phylo <- midpoint.root(partiti@phylo)
+partiti <- groupOTU(partiti, cls)
+partititree <- ggtree(partiti, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
-  geom_nodepoint(aes(subset = posterior > 0.8), color='black',size=1) + 
-  #geom_tiplab() + 
+  geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
+  geom_tiplab() + 
   #theme(legend.position = c(0.1,0.9), 
   #      legend.title = element_blank(), # no title
   #      legend.key = element_blank()) +
-  xlim(0,5) + 
+  xlim(0,4) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
 partititree
-#ggsave("Treeplots/partiti.svg",partititree, device = "svg", dpi=380,width = 6.04, height = 10)
-#ggtree(partiti, aes(color=group)) +
-#  geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
-#  geom_nodepoint(aes(subset = posterior > 0.8), color='black') + 
-#  geom_tiplab() + 
-#  theme(legend.position = c(0.1,0.9), 
-#        legend.title = element_blank(), # no title
-#        legend.key = element_blank()) +
-#  xlim(0,4) + 
-#  geom_treescale() + 
-#  scale_colour_manual(values = cols2)
+ggsave("treePlots/partiti.svg",partititree, device = "svg", dpi=300)
+ggsave("treePlots/partiti.pdf",partititree, device = "pdf", dpi=300)
+
+# Hepe-astro-NS ---------------------------------------------------------
+
+astrohepe <- read.mrbayes("data/cons_trees/astrohepe.nex.con.tre")
+
+
+# Hepe-astro-NS Colors ----------------------------------------------------
+
+cls <- list(NODE = c('BeeP_49_2013_NODE_27_length_6327_cov_6_608480_3'),
+            Alphatetraviridae = c('EU345431.1_1','KX423453.1_1','NC_001981.1_1','NC_005898.1_1','U18246.1_1','AY594352.1_1'),
+            Astroviridae = c('KX907135.1_1','NC_032426.1_1','NC_040647.1_1'),
+            Hepeviridae = c('MF190001.1_1','NC_040710.1_1'),
+            Bromoviridae = c('NC_009537.1_1'))
+cols <- c("NODE" = "#ff7f0e","Alphatetraviridae"="#2ca02c","Astroviridae"="#2ca02c","Hepeviridae"="#2ca02c","Bromoviridae"="#2ca02c")
+
+
+# Hepe-astro-NS Plot ------------------------------------------------------
+
+astrohepe@phylo <- midpoint.root(astrohepe@phylo)
+astrohepe <- groupOTU(astrohepe, cls)
+astrohepetree <- ggtree(astrohepe, aes(color=group), size=1) +
+  #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
+  geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
+  geom_tiplab() + 
+  #theme(legend.position = c(0.1,0.9), 
+  #      legend.title = element_blank(), # no title
+  #      legend.key = element_blank()) +
+  xlim(0,4) + 
+  geom_treescale() + 
+  scale_colour_manual(values = cols)
+astrohepetree
+ggsave("treePlots/astrohepe.svg",astrohepetree, device = "svg", dpi=300)
+ggsave("treePlots/astrohepe.pdf",astrohepetree, device = "pdf", dpi=300)
+
+
+# SinaiS-AA ---------------------------------------------------------------
+
+sinais <- read.mrbayes("data/cons_trees/sinais-aa.nex.con.tre")
+
+
+# SinaiS-AA Colors --------------------------------------------------------
+cls <- list(NODE = c('BP11_NODE_2_length_5933_cov_8664_753785_2', 
+                     'BP35_NODE_8_length_6159_cov_3073_471514_3',
+                     'BeeP_34_2013_NODE_11_length_5700_cov_81_138894_3',
+                     'BeeP_34_2013_NODE_8_length_5876_cov_117_977410_3'),
+            SRA = c('SRR1239309.Contig_10906_56.5422_length_5835_3', 'SRR1239309.Contig_3402_33.8366_length_5852_3', 'SRR1239310.Contig_18500_86.3069_length_5976_3', 'SRR3927501.Contig_20_4621.33_length_5753_3', 'SRR5109829.Contig_5052_19.3642_length_5832_3', 'SRR5117449.Contig_4792_738.395_length_5543_3', 'SRR6031640.Contig_16980_3187.18_length_5924_3', 'SRR6031648.Contig_11953_83.802_length_5935_3', 'SRR6833958.Contig_36829_28.5413_length_5784_3', 'SRR806508.Contig_22923_17.5662_length_5787_3', 'SRR806508.Contig_4561_28.5866_length_5893_3', 'SRR806550.Contig_15712_2565.35_length_5987_3'),
+            Sinai1 = c('HQ871931.2_2','KY465697.1_2','KY465698.1_2','KY465699.1_2','KY465700.1_2','KY465701.1_2','KY465702.1_2','KY465703.1_2','KY465704.1_2','KY465705.1_2','LR596015.1_2','NC_035466.1_2'),
+            Sinai2 = c('HQ888865.2_2','KY465706.1_2','KY465707.1_2','KY465708.1_2','KY465709.1_2','KY465710.1_2','KY465711.1_2','KY465712.1_2','KY465713.1_2','LR655824.1_2','NC_035467.1_2'),
+            Sinai = c('KM886902.1_2','KM886903.1_2','KM886904.1_2','KM886905.1_2','KX883223.1_2','KY465714.1_2','KY465715.1_2','KY465716.1_1','KY465717.1_2','KY465719.1_1','KY465720.1_2','MG918125.1_2','NC_032433.1_2'),
+            SinaiTO = c('KY354241.1_2'),
+            SinaiNE = c('KY354242.1_2','NC_035113.1_2'),
+            SinaiSA1 = c('KY354243.1_2','NC_035111.1_2'),
+            SinaiSA2 = c('KY354244.1_2', 'NC_035112.1_2'),
+            Sinai3 = c('MH267699.1_2','MH267700.1_2'))
+
+cols <- c("0" ="#7f7f7f", "NODE" = "#ff7f0e","SRA" = "#1f77b4","Sinai1" = "#2ca02c",
+          "Sinai2" = "#2ca02c","Sinai" = "#2ca02c","SinaiTO" = "#2ca02c",
+          "SinaiNE" = "#2ca02c","SinaiSA1" = "#2ca02c","SinaiSA2" = "#2ca02c",
+          "Sinai3" = "#2ca02c")
+
+# SinaiS-AA Plot ----------------------------------------------------------
+sinais@phylo <- midpoint.root(sinais@phylo)
+sinais <- groupOTU(sinais, cls)
+sinaistree <- ggtree(sinais, aes(color=group), size=1) +
+  #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
+  geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
+  geom_tiplab() + 
+  #theme(legend.position = c(0.1,0.9), 
+  #      legend.title = element_blank(), # no title
+  #      legend.key = element_blank()) +
+  xlim(0,4) + 
+  geom_treescale() + 
+  scale_colour_manual(values = cols)
+sinaistree
+ggsave("treePlots/sinais.svg",sinaistree, device = "svg", dpi=300)
+ggsave("treePlots/sinais.pdf",sinaistree, device = "pdf", dpi=300)
+
+
+# Toti --------------------------------------------------------------------
+
+toti <- read.mrbayes("data/cons_trees/toti.nex.con.tre")
+
+
+# Toti Colors -------------------------------------------------------------
+
+cls <- list(NODE = c('BP23_NODE_31_length_5100_cov_72_148022_1_',
+                     'BeeP_34_2013_NODE_9_length_5861_cov_32_563451_2_'),
+            SRA = c('SRR1503019.Contig_22032_542.914_length_5984_1_',
+                    'SRR6456322.Contig_9844_124.905_length_7917_1_'),
+            victorivirus = c('NC_001963.1_2_',
+                             'NC_001964.1_2_',
+                             'NC_003607.1_2_',
+                             'NC_003876.1_2_',
+                             'NC_005074.1_2_',
+                             'NC_006367.1_3_',
+                             'NC_007523.1_2_',
+                             'NC_010246.1_3_',
+                             'NC_014823.1_2_',
+                             'NC_020997.1_2_',
+                             'NC_021565.1_2_',
+                             'NC_023547.1_3_',
+                             'NC_024151.1_2_',
+                             'NC_025366.1_2_',
+                             'NC_026140.1_2_',
+                             'NC_027209.1_3_',
+                             'NC_028477.1_2_',
+                             'NC_030224.1_2_',
+                             'NC_030392.1_2_',
+                             'NC_030867.1_2_',
+                             'NC_038928.1_2_',
+                             'NC_038929.1_2_',
+                             'NC_038930.1_2_',
+                             'NC_040653.1_3_',
+                             'NC_040793.1_2_'),
+            toti = c('NC_009224.1_2_'),
+            unclas = c('NC_025218.1_2_',
+                       'NC_028948.1_2_',
+                       'NC_029989.1_2_',
+                       'NC_032424.1_1_',
+                       'NC_032806.1_2_',
+                       'NC_032819.1.1_',
+                       'NC_032851.1_1_',
+                       'NC_032931.1.1_',
+                       'NC_032948.1_1_',
+                       'NC_040530.1_2_'))
+
+cols <- c("0"="#7f7f7f","NODE" = "#ff7f0e","SRA" = "#1f77b4","victorivirus" = "#2ca02c","toti" = "#2ca02c","unclas" = "#7f7f7f")
+
+
+
+# Toti Plot ---------------------------------------------------------------
+toti@phylo <- midpoint.root(toti@phylo)
+toti <- groupOTU(toti, cls)
+totitree <- ggtree(toti, aes(color=group), size=1) +
+  #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
+  geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
+  geom_tiplab() + 
+  #theme(legend.position = c(0.1,0.9), 
+  #      legend.title = element_blank(), # no title
+  #      legend.key = element_blank()) +
+  xlim(0,10) + 
+  geom_treescale() + 
+  scale_colour_manual(values = cols)
+totitree
+ggsave("treePlots/toti.svg",totitree, device = "svg", dpi=300)
+ggsave("treePlots/toti.pdf",totitree, device = "pdf", dpi=300)
+
+
+# REST -----------------------------------------------------------
+
+
 
 
 
