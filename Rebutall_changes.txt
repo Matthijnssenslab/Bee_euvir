@@ -1,0 +1,22 @@
+# Contamination
+
+  - identified three contigs hitting against contaminome:
+
+    - BeeP-25-2013_NODE_2878_length_686_cov_8_561576  
+    - BeeP-25-2013_NODE_7671_length_511_cov_8_142857  
+    - BeeP-35-2013_NODE_6003_length_514_cov_1_240275  
+    - DRR029858.Contig_9800_10.032_length_927  
+
+  Remove those from Pcoa (data/Pcoa/Flemishbee_df_denovo.tsv:
+
+grep -v 'BeeP-25-2013_NODE_2878_length_686_cov_8_561576\|BeeP-25-2013_NODE_7671_length_511_cov_8_142857\|BeeP-35-2013_NODE_6003_length_514_cov_1_240275\|DRR029858.Contig_9800_10.032_length_927' Flemishbee_df_denovo.tsv > Flemishbee_df_denovo_clean.tsv
+
+grep -v 'BeeP-25-2013_NODE_2878_length_686_cov_8_561576\|BeeP-25-2013_NODE_7671_length_511_cov_8_142857\|BeeP-35-2013_NODE_6003_length_514_cov_1_240275\|DRR029858.Contig_9800_10.032_length_927' sracontig_length.tsv > sracontig_length_cleaned.tsv  
+
+Both coverage matrices in the zenodo folder are updated.
+
+pcoa scripts are updated, began working on treeplots.
+
+TODO:
+nested blocks, tax parse pickles, subset networks, group output figures in folder.
+

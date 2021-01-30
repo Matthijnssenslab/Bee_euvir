@@ -1,8 +1,8 @@
 Apidae,Formicidae,388
 Apidae,Vespidae,531
 Apidae,Halictidae,46
-Apidae,Braconidae,737
-Apidae,Megachilidae,681
+Apidae,Braconidae,736
+Apidae,Megachilidae,679
 Apidae,Pteromalidae,1066
 Apidae,Cephidae,742
 Apidae,Figitidae,264
@@ -17,7 +17,7 @@ Formicidae,Cephidae,306
 Formicidae,Figitidae,106
 Formicidae,Others,190
 Vespidae,Formicidae,25
-Vespidae,Apidae,34
+Vespidae,Apidae,35
 Vespidae,Halictidae,6
 Vespidae,Braconidae,53
 Vespidae,Megachilidae,43
