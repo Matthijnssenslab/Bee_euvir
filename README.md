@@ -25,3 +25,4 @@ The preferred order of running scripts are:
   * Tax.py
   * Taxonomy notebooks
  
+For the jupyter notebooks, install and active the conda env yaml file.
