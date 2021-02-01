@@ -19,6 +19,7 @@ pcoa scripts are updated, began working on treeplots.
 
 - Conda env implemented.
 - tax BEE notebook is updated (remove contam).
+- tax SRA notebook is updated.
 
 
 
