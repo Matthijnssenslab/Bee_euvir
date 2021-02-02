@@ -63,14 +63,14 @@ Api,Vespi,Bunyavirales,2
 Api,Vespi,Caudovirales,31
 Api,Halict,Unclassified,45
 Api,Halict,Picornavirales,1
-Api,Braco,Unclassified,551
+Api,Braco,Unclassified,550
 Api,Braco,Picornavirales,111
 Api,Braco,Articulavirales,4
 Api,Braco,Mononegavirales,12
 Api,Braco,Tymovirales,10
 Api,Braco,Bunyavirales,6
 Api,Braco,Caudovirales,43
-Api,Mega,Unclassified,514
+Api,Mega,Unclassified,512
 Api,Mega,Picornavirales,112
 Api,Mega,Mononegavirales,6
 Api,Mega,Ortervirales,2
@@ -114,6 +114,7 @@ Vespi,Formi,Mononegavirales,1
 Vespi,Api,Unclassified,30
 Vespi,Api,Mononegavirales,2
 Vespi,Api,Bunyavirales,1
+Vespi,Api,Ortervirales,1
 Vespi,Api,Picornavirales,1
 Vespi,Halict,Unclassified,6
 Vespi,Braco,Unclassified,46
