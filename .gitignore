@@ -18,7 +18,7 @@ data/nodesRED.dmp
 data/namesRED.dmp
 data/nucl_gb.accession2taxid
 #Figures
-treePlots/*
+treePlots/*svg
 Figures/*
 networks/*cys
 *Rhistory
