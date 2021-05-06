@@ -35,7 +35,7 @@ cls <- list(Unclassified = c('KX884775.1_1',
                               'NC_043642.1_1'),
             Peribunyaviridae = c('KY354237.1_1', 'SRR5109820.Contig_13922_1091.96_length_6449_1'),
             SRA = c('SRR1812786.Contig_29604_62.7809_length_6336_1','SRR2664950.Contig_23840_14.7864_length_6215_1'))
-cols <- c("0" ="#7f7f7f", "Unclassified" = "#7f7f7f","SRA" = "#ff7f0e",
+cols <- c("0" ="#7f7f7f", "Unclassified" = "#7f7f7f","SRA" = "#1f77b4",
           "Phasmaviridae" = "#2ca02c","Peribunyaviridae" = "#2ca02c")
 
 # Bunya Plot --------------------------------------------------------------
@@ -498,10 +498,11 @@ cls <- list(NODE = c('BP11_NODE_2_length_5933_cov_8664_753785_3',
                      'BP35_NODE_8_length_6159_cov_3073_471514_2',
                      'BeeP_34_2013_NODE_11_length_5700_cov_81_138894_2',
                      'BeeP_34_2013_NODE_8_length_5876_cov_117_977410_2'),
+            Recom = c("LSV_recomAstro_Belgium_2"),
             SRA = c('SRR1239309.Contig_10906_56.5422_length_5835_2', 'SRR1239309.Contig_3402_33.8366_length_5852_2',
                     'SRR1239310.Contig_18500_86.3069_length_5976_2', 'SRR3927501.Contig_20_4621.33_length_5753_2', 'SRR5109829.Contig_5052_19.3642_length_5832_2',
                     'SRR5117449.Contig_4792_738.395_length_5543_2', 'SRR6031640.Contig_16980_3187.1', 'SRR6031648.Contig_11953_83.802_length_5935_2',
-                    'SRR6833958.Contig_36829_28.5413_length_5784_2', 'SRR806508.Contig_22923_17.5662_length_5787_2', 'SRR806508.Contig_45.18.5866_length_5893_2', 'SRR806550.Contig_15712_2565.35_length_5987_2'),
+                    'SRR6833958.Contig_36829_28.5413_length_5784_2', 'SRR806508.Contig_22923_17.5662_length_5787_2', 'SRR806508.Contig_4561_28.5866_length_5893_2', 'SRR806550.Contig_15712_2565.35_length_5987_2'),
             Sinai1 = c('HQ871931.2','KY465697.1','KY465698.1','KY465699.1','KY465700.1','KY465701.1','KY465702.1','KY465703.1','KY465704.1','KY465705.1','LR596015.1','NC_035466.1'),
             Sinai2 = c('HQ888865.2','KY465706.1','KY465707.1','KY465708.1','KY465709.1','KY465710.1','KY465711.1','KY465712.1','KY465713.1','LR655824.1','NC_035467.1'),
             Sinai = c('KM886902.1','KM886903.1','KM886904.1','KM886905.1','KX883223.1','KY465714.1','KY465715.1','KY465716.1_1','KY465717.1','KY465719.1_1','KY465720.1','MG918125.1','NC_032433.1'),
@@ -514,7 +515,7 @@ cls <- list(NODE = c('BP11_NODE_2_length_5933_cov_8664_753785_3',
 cols <- c("0" ="#7f7f7f", "NODE" = "#ff7f0e","SRA" = "#1f77b4","Sinai1" = "#2ca02c",
           "Sinai2" = "#2ca02c","Sinai" = "#2ca02c","SinaiTO" = "#2ca02c",
           "SinaiNE" = "#2ca02c","SinaiSA1" = "#2ca02c","SinaiSA2" = "#2ca02c",
-          "Sinai3" = "#2ca02c")
+          "Sinai3" = "#2ca02c", Recom='red')
 
 
 
