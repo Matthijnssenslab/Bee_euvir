@@ -1050,15 +1050,29 @@ cols2 <- c("NODE" = "#ff7f0e",
            "0" = "red",
            "unclas" = "#7f7f7f")
 # Picorna Plot ------------------------------------------------------------
-picorna@phylo <- midpoint.root(picorna@phylo)
+picornaRoot <- picorna
+picornaRoot@phylo <- midpoint.root(picornaRoot@phylo)
 picorna <- groupOTU(picorna, cls)
-picornatree <- ggtree(picorna, aes(color=group), size=1) +
+picornaRoot <- groupOTU(picornaRoot, cls)
+# Circular.
+picornaCirc <- ggtree(picorna, aes(color=group), size=1, layout='circular') +
+  #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
+  geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
+  geom_tiplab(align=TRUE) + 
+  theme(legend.position = c(-500,0.9), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
+  geom_treescale() + 
+  scale_colour_manual(values = cols)
+picornaCirc
+# Regular.
+picornatree <- ggtree(picornaRoot, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
+  theme(legend.position = c(-500,0.9), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
   xlim(0,3) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
@@ -1085,6 +1099,7 @@ cls <- list(NODE = c('BeeP_34_2013_NODE_2_length_13379_cov_90_712825_1',
                     'SRR7192237.Contig_7933_213.1',
                     'SRR974922.Contig_11618_267.764_length_12229_5'),
             rhabdo = c('AB009601.1',
+                       'MH477288.1',
                        'AB011257.1',
                        'AB075039.1',
                        'AB244418.1',
@@ -1696,7 +1711,6 @@ cls <- list(NODE = c('BeeP_34_2013_NODE_2_length_13379_cov_90_712825_1',
             narna = c('MN034260.1',
                       'MN035123.1',
                       'MN035214.1'),
-            polycipi = c('MH477288.1'),
             arto = c('KX884420.1',
                      'KX884421.1',
                      'KX884446.1',
@@ -1783,19 +1797,48 @@ cols2 <- c("NODE" = "#ff7f0e",
            "0" = "red")
 
 # Rhabdo Plot -------------------------------------------------------------
-rhabdo@phylo <- midpoint.root(rhabdo@phylo)
+# circular
 rhabdo <- groupOTU(rhabdo, cls)
-rhabdotree <- ggtree(rhabdo, aes(color=group), size=1) +
+
+rhabdoCirc <- ggtree(rhabdo, aes(color=group), size=1, layout='circular') +
+  #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
+  geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
+  geom_tiplab(align=TRUE) + 
+  theme(legend.position = c(-500,0.9), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
+  geom_treescale() + 
+  scale_colour_manual(values = cols)
+rhabdoCirc
+
+rhabdoRoot <- rhabdo
+rhabdoRoot@phylo <- midpoint.root(rhabdoRoot@phylo)
+rhabdoRoot <- groupOTU(rhabdoRoot, cls)
+rhabdotree <- ggtree(rhabdoRoot, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
-  xlim(0,3) + 
+  theme(legend.position = c(-500,0.9), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
+  xlim(0,5) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
 rhabdotree
 ggsave("treePlots/rhabdo.svg",rhabdotree, device = "svg", dpi=300)
 ggsave("treePlots/rhabdo.pdf",rhabdotree, device = "pdf", dpi=300)
 
+
+
+# ComboPlots --------------------------------------------------------------
+
+
+rhabdotree
+picornatree
+
+picorna_rhabdoGrid <- grid.arrange(picornatree, rhabdotree, ncol=2)
+picorna_rhabdoGrid
+ggsave("treePlots/rhabdoPicorna_sup.svg", picorna_rhabdoGrid, device="svg", width=18, height=25)
+
+picorna_rhabdoCircGrid <- grid.arrange(picornaCirc, rhabdoCirc, ncol=2)
+picorna_rhabdoCircGrid
