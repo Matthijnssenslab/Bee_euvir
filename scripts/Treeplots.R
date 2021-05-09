@@ -1843,3 +1843,7 @@ ggsave("treePlots/rhabdoPicorna_sup.svg", picorna_rhabdoGrid, device="svg", widt
 picorna_rhabdoCircGrid <- grid.arrange(picornaCirc, rhabdoCirc, ncol=2)
 picorna_rhabdoCircGrid
 ggsave("treePlots/rhabdoPicorna_circ.svg", picorna_rhabdoCircGrid, device="svg", width=25, height=12)
+
+
+RestPlots <- grid.arrange(bunyatree, totitree, orthobeetree, orthosratree, astrohepetree, sinaistree, partititree, tymotree, ncol=2 )
+ggsave("treePlots/restTrees.svg", RestPlots, dpi=300)
