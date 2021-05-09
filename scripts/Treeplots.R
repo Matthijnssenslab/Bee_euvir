@@ -1055,7 +1055,7 @@ picornaRoot@phylo <- midpoint.root(picornaRoot@phylo)
 picorna <- groupOTU(picorna, cls)
 picornaRoot <- groupOTU(picornaRoot, cls)
 # Circular.
-picornaCirc <- ggtree(picorna, aes(color=group), size=1, layout='circular') +
+picornaCirc <- ggtree(picornaRoot, aes(color=group), size=1, layout='circular') +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab(align=TRUE) + 
@@ -1800,7 +1800,7 @@ cols2 <- c("NODE" = "#ff7f0e",
 # circular
 rhabdo <- groupOTU(rhabdo, cls)
 
-rhabdoCirc <- ggtree(rhabdo, aes(color=group), size=1, layout='circular') +
+rhabdoCirc <- ggtree(rhabdoRoot, aes(color=group), size=1, layout='circular') +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab(align=TRUE) + 
@@ -1842,4 +1842,4 @@ ggsave("treePlots/rhabdoPicorna_sup.svg", picorna_rhabdoGrid, device="svg", widt
 
 picorna_rhabdoCircGrid <- grid.arrange(picornaCirc, rhabdoCirc, ncol=2)
 picorna_rhabdoCircGrid
-ggsave("treePlots/rhabdoPicorna_circ.svg", picorna_rhabdoCircGrid, device="svg", dpi=300)
+ggsave("treePlots/rhabdoPicorna_circ.svg", picorna_rhabdoCircGrid, device="svg", width=25, height=12)
