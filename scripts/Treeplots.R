@@ -182,28 +182,28 @@ partiti <- read.mrbayes("data/cons_trees/partiti.nex.con.tre")
 # Partiti Colors ----------------------------------------------------------
 cls <- list(NODE = c('BP15_NODE_21_length_1989_cov_11_700214_1',
                      'BP23_NODE_181_length_1578_cov_4_697323',
-                     'BP2_NODE_11_length_2442_cov_8_707023',
+                     'BP2_NODE_11_length_2442_cov_8_707023_2',
                      'BP48_NODE_37_length_1861_cov_5_466667_1',
-                     'BeeP-11-2013_NODE_907_length_1923_cov_7_401408_1',
-                     'BeeP-32-2013_NODE_32_length_2325_cov_12_654359_1',
-                     'BeeP-32-2013_NODE_58_length_1715_cov_25_394994_1',
-                     'BeeP-33-2013_NODE_5_length_2414_cov_84_842533_1',
-                     'BeeP-35-2013_NODE_401_length_2385_cov_62_380849_1',
-                     'BeeP-35-2013_NODE_620_length_1910_cov_20_108565_1',
-                     'BeeP-35-2013_NODE_899_length_1547_cov_109_939456_2',
-                     'BeeP-37-2013_NODE_115_length_2447_cov_879_975527_1',
-                     'BeeP-37-2013_NODE_116_length_2446_cov_659_816800_1',
-                     'BeeP-37-2013_NODE_164_length_1939_cov_93_179914_1',
-                     'BeeP-44-2013_NODE_110_length_1821_cov_96_515482_1',
-                     'BeeP-44-2013_NODE_146_length_1607_cov_51_104575_1',
-                     'BeeP-44-2013_NODE_94_length_1947_cov_31_678610_1',
-                     'BeeP-44-2013_NODE_99_length_1913_cov_780_763617_1',
-                     'BeeP-47-2013_NODE_67_length_1854_cov_32_899268_1',
-                     'BeeP-47-2013_NODE_88_length_1610_cov_66_399870_1',
-                     'BeeP-49-2013_NODE_249_length_1887_cov_3011_785635_1',
-                     'BeeP-49-2013_NODE_255_length_1857_cov_503_888202_1',
-                     'BeeP-49-2013_NODE_262_length_1819_cov_24_860505_1',
-                     'BeeP-49-2013_NODE_307_length_1700_cov_116_550832_1'),
+                     'BeeP_11_2013_NODE_907_length_1923_cov_7_401408_1',
+                     'BeeP_32_2013_NODE_32_length_2325_cov_12_654359_1',
+                     'BeeP_32_2013_NODE_58_length_1715_cov_25_394994_1',
+                     'BeeP_33_2013_NODE_5_length_2414_cov_84_842533_1',
+                     'BeeP_35_2013_NODE_401_length_2385_cov_62_380849_1',
+                     'BeeP_35_2013_NODE_620_length_1910_cov_20_108565_1',
+                     'BeeP_35_2013_NODE_899_length_1547_cov_109_939456_2',
+                     'BeeP_37_2013_NODE_115_length_2447_cov_879_975527_1',
+                     'BeeP_37_2013_NODE_116_length_2446_cov_659_816800_1',
+                     'BeeP_37_2013_NODE_164_length_1939_cov_93_179914_1',
+                     'BeeP_44_2013_NODE_110_length_1821_cov_96_515482_1',
+                     'BeeP_44_2013_NODE_146_length_1607_cov_51_104575_1',
+                     'BeeP_44_2013_NODE_94_length_1947_cov_31_678610_1',
+                     'BeeP_44_2013_NODE_99_length_1913_cov_780_763617_1',
+                     'BeeP_47_2013_NODE_67_length_1854_cov_32_899268_1',
+                     'BeeP_47_2013_NODE_88_length_1610_cov_66_399870_1',
+                     'BeeP_49_2013_NODE_249_length_1887_cov_3011_785635_1',
+                     'BeeP_49_2013_NODE_255_length_1857_cov_503_888202_1',
+                     'BeeP_49_2013_NODE_262_length_1819_cov_24_860505_1',
+                     'BeeP_49_2013_NODE_307_length_1700_cov_116_550832_1'),
             SRA = c('ERR1354112.Contig_10743_83.2701_length_2186_2',
                     'SRR4002881.Contig_4619_145.602_length_2331_1'),
             Alpha = c('NC_038827.1_1',
@@ -1845,5 +1845,7 @@ picorna_rhabdoCircGrid
 ggsave("treePlots/rhabdoPicorna_circ.svg", picorna_rhabdoCircGrid, device="svg", width=25, height=12)
 
 
-RestPlots <- grid.arrange(bunyatree, totitree, orthobeetree, orthosratree, astrohepetree, sinaistree, partititree, tymotree, ncol=2 )
-ggsave("treePlots/restTrees.svg", RestPlots, dpi=300)
+# restGrid
+restGrid <- grid.arrange(bunyatree,totitree,orthobeetree, orthosratree, astrohepetree, sinaistree, partititree,tymotree, ncol=2)
+restGrid
+ggsave("treePlots/restTrees.svg", restGrid, width = 20, height=35)
