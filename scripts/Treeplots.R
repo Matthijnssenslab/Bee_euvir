@@ -45,9 +45,9 @@ bunyatree <- ggtree(bunya, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
+  theme(legend.position = c(50,50), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
   xlim(0, 2) +
   geom_treescale() + 
   scale_colour_manual(values = cols)
@@ -76,9 +76,9 @@ orthobeetree <- ggtree(orthobee, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
+  theme(legend.position = c(50,50), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
   xlim(0,4) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
@@ -97,7 +97,7 @@ cls <- list(NODE = c('BP46_NODE_59_length_2296_cov_1606.73_PB1_1'),
                     'SRR3993646.Contig_4218_61.3183_length_2345_1',
                     'SRR4301486.Contig_8416_72.6801_length_2424_1',
                     'SRR5885442.Contig_31234_55.8986_length_1924_1',
-                    'SRR6001380.Contig_6081_137. 105_length_2095_1',
+                    'SRR6001380.Contig_6081_137.105_length_2095_1',
                     'SRR770031.Contig_2318_75.597_length_2397_1'),
             delta = c('KM392504.1',
                       'KX768818.1'),
@@ -165,9 +165,9 @@ orthosratree <- ggtree(orthosra, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
+  theme(legend.position = c(50,50), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
   xlim(0,4) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
@@ -243,9 +243,9 @@ partititree <- ggtree(partiti, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
+  theme(legend.position = c(50,50), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
   xlim(0,4) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
@@ -275,9 +275,9 @@ astrohepetree <- ggtree(astrohepe, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
+  theme(legend.position = c(50,50), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
   xlim(0,4) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
@@ -318,9 +318,9 @@ sinaistree <- ggtree(sinais, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
+  theme(legend.position = c(50,50), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
   xlim(0,0.5) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
@@ -388,9 +388,9 @@ totitree <- ggtree(toti, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
+  theme(legend.position = c(50,50), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
   xlim(0,8) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
@@ -476,9 +476,9 @@ tymotree <- ggtree(tymo, aes(color=group), size=1) +
   #geom_nodelab(aes(label=round(as.numeric(posterior), 2)),alpha=0.5,color='black', size=2, nudge_x=0.01) +
   geom_nodepoint(aes(subset = prob > 0.8), color='black',size=2) + 
   geom_tiplab() + 
-  #theme(legend.position = c(0.1,0.9), 
-  #      legend.title = element_blank(), # no title
-  #      legend.key = element_blank()) +
+  theme(legend.position = c(50,50), 
+        legend.title = element_blank(), # no title
+        legend.key = element_blank()) +
   xlim(0,4) + 
   geom_treescale() + 
   scale_colour_manual(values = cols)
