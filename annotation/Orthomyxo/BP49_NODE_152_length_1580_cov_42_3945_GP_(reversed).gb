@@ -1,0 +1,53 @@
+LOCUS       BP49_NODE_152_length_1580_cov_42_3945_GP (reversed)        1553 bp    DNA     linear   UNA 21-JAN-2022
+DEFINITION  .
+ACCESSION   urn.local...4x-ed8rk56
+VERSION     urn.local...4x-ed8rk56
+KEYWORDS    .
+SOURCE
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     misc_feature    3..38
+                     /standard_name="Trim annotation?"
+     CDS             3..1514
+                     /codon_start=1
+                     /translation="IRVAAASFCSDTMNQGPFMVKTAFPPPMNITRIRAKIQKTFLDY
+                     EQSMMITGYRQVWKSYCYQGGPLDGNTGCYNGMKMYKPDMFELAKWFIKGKCETGPEV
+                     VDAWGSDSTICLDYKPTGSWWDHKELIKRENNNHFAHHTCNLSWRCGMKSANVWIDLE
+                     AIDIDPDANRGLDAIYIRYLRVANGSIVKIPEKVKEFYFCEGPYCHFIKNVPPIVTVE
+                     EDWDCLEELKAGPNYVYNQELWCQQGDKYFSISNKTSVCMDNTCVRLKNTHSHTNYVN
+                     LNAHNVSSIINQQSASLDDLLKVNRELHFQVENLRYNLAIADTNHRALYKVVERLILS
+                     VAKMDERLIGNILKKDVATRFLNDTTFMMAPCVSPVQTTSNCNNGSIYDSGRWVPNTD
+                     PSRCINFNEPKAVSLLNEKSLWFPAVGDPKSRGISAEQEGWSFVVNSKSALQETLSVT
+                     KNGGRGTSLEDIVNVPKGFIDGQFSFLHLLSGFSLTSVLVITVVLILISRRIF"
+                     /product="Glycoprotein (Fragment)"
+     misc_feature
+                     /note="Geneious type: Editing History Deletion"
+                     /standard_name="AAGAAAAAAACCAAACACACCCAACAC"
+ORIGIN
+        1 taattagagt ggctgctgcg agcttttgca gtgacaccat gaatcaagga ccgtttatgg
+       61 taaagactgc cttccctcca ccaatgaaca taacccgcat cagagccaag attcagaaaa
+      121 ctttcctaga ctatgaacag tcaatgatga taactggata ccgtcaagtt tggaaaagct
+      181 attgctacca aggaggacca ttagatggta acactggttg ttataatgga atgaagatgt
+      241 ataaacctga tatgtttgaa cttgcaaagt ggtttataaa gggtaaatgc gaaactggac
+      301 ctgaagtggt tgatgcttgg ggaagtgatt caacaatatg tttagactat aaaccaaccg
+      361 gttcttggtg ggaccataaa gaacttataa agagagaaaa caacaaccac tttgcgcatc
+      421 acacctgcaa cctttcatgg agatgtggga tgaagagtgc aaatgtgtgg attgatttag
+      481 aggccattga cattgatccg gatgccaata gaggattgga tgctatttac ataaggtact
+      541 taagggtagc caatggatca atagttaaga ttcccgaaaa agtgaaggag ttttattttt
+      601 gtgaagggcc ttattgtcac ttcattaaaa atgtcccacc tattgtaact gttgaagaag
+      661 actgggattg tttggaagaa ttgaaggctg gaccgaatta tgtgtacaac caagaactat
+      721 ggtgccagca aggtgataag tatttttcta tctccaacaa aacttcagtc tgcatggaca
+      781 acacttgtgt aaggttaaag aacacacact cacatactaa ttatgtgaac ctaaatgcac
+      841 acaatgtttc gagtatcata aaccagcaaa gtgctagctt agatgacttg ttaaaagtta
+      901 accgagagct ccacttccaa gtcgagaacc tcagatataa tttggctatt gctgatacaa
+      961 atcaccgggc attgtacaag gtagtagagc gattaatact gagtgtggca aaaatggacg
+     1021 aacggttaat cgggaatata ttgaagaagg atgttgcaac cagattcttg aatgatacta
+     1081 ctttcatgat ggctccttgt gtaagtccag tccaaactac atcgaattgc aataatggct
+     1141 caatctatga ttcagggcgg tgggtgccaa acactgatcc atctagatgt ataaacttta
+     1201 atgaacccaa agctgtttct cttttaaacg agaaatcttt atggttccca gcagtcggtg
+     1261 acccaaaatc tagaggcatc tctgcagaac aggaaggatg gtcttttgtg gtaaatagta
+     1321 agagtgcttt acaagagact ttatcagtca ctaaaaatgg gggccgtggt acgtctttag
+     1381 aggacattgt taatgtacct aaggggttca tagatggcca gttttcattt ctgcatttat
+     1441 tatcaggatt tagcctgaca tctgtattgg taattaccgt tgtacttata ctaatatccc
+     1501 gtagaatttt ctaggttaat gttgttatac ttttctgttt gtaaatagtt gtt
+//

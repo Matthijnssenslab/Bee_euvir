@@ -1,0 +1,62 @@
+LOCUS       BP47_NODE_10_length_2011_cov_163_486_PA (reversed)        1993 bp    DNA     linear   UNA 21-JAN-2022
+DEFINITION  .
+ACCESSION   urn.local...2x-ed8re1j
+VERSION     urn.local...2x-ed8re1j
+KEYWORDS    .
+SOURCE
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     misc_feature
+                     /note="Geneious type: Editing History Deletion"
+                     /standard_name="GTGTTGGGTGTGTTTGGT"
+     CDS             34..1980
+                     /codon_start=1
+                     /translation="MEVQAPAFVANEVWQLSETQADWNSISDGYTRRVIECLKYMIYC
+                     QISNDHKHRNMSRYIFLKWHNKEFAEQIAEENGVSVRQLAEGGLLDKKLRVVIRVRLV
+                     ISLSTEADHTLQLETNEVLIVIDKTGRLNVSSPGVIDKAQSQLCSSCMVKCTQWFSSQ
+                     NQEQLLDLVLSTGHSTHVTIPKLLAGLLIKDSDLTFIPDTTTKGEDSTLLGKPWTQMK
+                     KLPKFDLNEDKQPQHWKPFLIACDSRYTMSEFASDQVVCKEISDRVETVVLKRQGHTG
+                     NDEVQTIMTSLKFYADGGNRRHIESCDIKSFGVNLKRKKKIKYEQLYGTPSEEEWKRA
+                     DYPIEHKSMPKWVPEELNDLDKKDSVEWIELERPYTHCELDEISEDIADKFLEAVTCT
+                     WAAAVMEKWVTASTKVYQELNTDRNKVTFLPISTRRCIYGTPMTQLWGFVCLGPHHLK
+                     HDSDRVPLVVLEFVGSDNPRKYPNHAYGYFKYIDAKDPQSVQPFLLRSTSIAKYRLFY
+                     FMAMRKCMIQPSSAFSKTVMNNAVLKGKMDLSEDVQVELFIYSDEEHTKLVAARMSAL
+                     IWATKMLSMHLLMAIWNDNQMEGFLANIRRLHMCRQAMVLKKGVFIPYGSSPESKCQE
+                     CIINNPIVLYLAKTWNDLPDIYYV"
+                     /product="Polymerase subunit PA"
+ORIGIN
+        1 catgggagtt aatgatctat ctaatcaaac caaatggaag tacaagcacc tgcattcgtg
+       61 gccaatgagg tatggcaatt atcagaaaca caagccgact ggaattccat tagcgatggg
+      121 tacaccagaa gggtaatcga atgtttaaag tatatgattt attgccagat cagtaatgac
+      181 cacaaacata gaaatatgtc aaggtacata tttctgaaat ggcataacaa agagtttgcc
+      241 gaacagattg cagaagagaa cggggtctct gtcagacaat tagctgaagg ggggctttta
+      301 gacaaaaagc tacgcgtggt aataagagtt agattagtaa tatctctatc aaccgaggca
+      361 gaccacactc tccaattaga gaccaatgaa gttcttatag taatagataa gacaggaaga
+      421 ttaaatgtct cttcccccgg agttatagac aaggcccaat cccagctttg ttcgagttgc
+      481 atggtgaaat gtacgcaatg gttttcttca caaaaccaag agcagctatt agatctggtc
+      541 ctctctacag gccatagtac acatgtaacc atcccaaaac tcttagctgg gcttttgatt
+      601 aaagatagtg atttgacatt tatcccagac actacaacaa aaggggagga cagcacattg
+      661 ttgggtaagc cttggacaca gatgaagaaa ctaccaaaat ttgacctcaa tgaggacaaa
+      721 caaccacagc attggaagcc cttcttgatt gcttgcgact ctaggtatac aatgagtgag
+      781 tttgcaagtg accaggtcgt atgcaaagag atcagcgata gggttgaaac tgtggtgctt
+      841 aaaagacagg gccacaccgg caatgatgag gtccaaacca ttatgactag tctaaagttc
+      901 tatgcagacg gcggcaacag gcgccatatc gagtcctgtg atattaaaag ctttggagtc
+      961 aacttgaaaa ggaagaaaaa gataaagtac gagcaactct atggcacacc ttcagaagaa
+     1021 gaatggaagc gcgctgatta ccccattgag cataagtcta tgccaaaatg ggtccctgag
+     1081 gagctgaacg atcttgataa aaaagattct gtcgaatgga ttgagcttga aagaccatat
+     1141 acacattgtg agctggatga gatatctgaa gacatagctg acaagttcct agaggcagtt
+     1201 acatgtacat gggcagcagc cgtgatggaa aagtgggtaa ctgcttcaac caaggtctac
+     1261 caagagctca atactgacag aaacaaagta acattcctac cgatttctac acggagatgt
+     1321 atatatggta cccctatgac acagttgtgg gggtttgtat gtttaggacc acatcatctg
+     1381 aagcacgatt cagatagggt acctttggtt gtgttagaat ttgttgggtc tgacaatcca
+     1441 agaaaatacc ccaaccatgc atatgggtat tttaaatata tagatgcaaa agaccctcaa
+     1501 tcagtccagc catttttgct gaggagtaca tctatagcca agtatagact tttctatttc
+     1561 atggctatga gaaaatgtat gatacaacca tcatcagctt tttctaaaac tgtgatgaac
+     1621 aatgctgttc ttaagggaaa gatggatctt tccgaggatg ttcaagttga gctttttatt
+     1681 tattccgacg aggaacatac aaaactcgtg gcagcaagga tgagcgctct aatatgggca
+     1741 actaaaatgc tatctatgca tcttttgatg gcaatatgga atgacaacca aatggaagga
+     1801 ttccttgcca atatacgacg attacatatg tgtagacaag ctatggtatt gaagaaaggt
+     1861 gtatttattc catatggatc aagcccagaa tctaaatgcc aagaatgtat tataaataac
+     1921 cccatagtcc tatatttggc aaaaacatgg aatgatctcc ccgatattta ttatgtataa
+     1981 tatgtgtact cag
+//

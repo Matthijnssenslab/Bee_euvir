@@ -1,0 +1,46 @@
+LOCUS       BP49_NODE_196_length_1334_cov_10_3341_NP        1334 bp    DNA     linear   UNA 21-JAN-2022
+DEFINITION  .
+ACCESSION   urn.local...55-ed8rkrg
+VERSION     urn.local...55-ed8rkrg
+KEYWORDS    .
+SOURCE
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     misc_feature    2..37
+                     /standard_name="Trim annotation?"
+     CDS             2..1333
+                     /codon_start=1
+                     /translation="YICTIGKRVSNKMNESMEVAVGTSSNRDELVTRFEANPNDIRDK
+                     YKEYQRLMLAMASTADIDITIDRNAELIGSAVMAGLTENKSVEREFEAAFVVVSSAGV
+                     ITLVDKKISMDVVNSARNVKLNTHQGRASWYPFLAALQLSAKTKDQILWQKSKVTTDL
+                     GVPTVCEPYAGGWHIKDKFKRSRALSIGPITHLWMYKKFQDRQDGSRKKRLAKEALRG
+                     IKERIRKTLKRQSIGVTQKKIIDAIFDEDKWELAKTLCLSYLGIKPHIEHHFVMTYPL
+                     IAVVNDWEGANFSNEWVWITLCNNIQKISFAAPDNTWPEFLMQCNIHGVLQSQAEDLG
+                     LLEDIFGMRFYQRKDFGRFDNKKVTLVSKPANPLAYKYWVRPQKGAPRVIEGARRGQI
+                     SSKPSLKCARRSYNQFTSLDELEKAYVSVSSENFVEEINKEFSAYTALQLEG"
+                     /product="Nucleoprotein (Fragment)"
+ORIGIN
+        1 ctatatatgt acgattggaa agagagtttc taacaaaatg aatgagagta tggaagtggc
+       61 tgttggtaca agttctaaca gagatgaact tgtgacaaga ttcgaagcaa accccaatga
+      121 tatacgtgat aaatacaaag agtaccaaag gttgatgctt gcgatggcga gtacagcaga
+      181 catagatata accatagata gaaatgcaga attgatcgga agtgcagtaa tggcagggtt
+      241 aacagaaaac aagagcgtag aacgagaatt tgaagcagcc tttgtagtgg tgagcagtgc
+      301 aggagtgata actctagttg acaagaagat ctcaatggat gtggtgaatt cagcacgaaa
+      361 tgtgaagctc aatacccatc agggaagggc cagttggtat ccattcttag cagccttaca
+      421 attgtcagcc aagaccaagg atcaaattct gtggcagaaa agtaaggtca ctactgatct
+      481 aggagtccct actgtgtgtg aaccctatgc aggtggttgg catataaagg acaagttcaa
+      541 aaggagccga gcattgtcaa taggcccaat aacccatctt tggatgtata agaagtttca
+      601 agacaggcaa gatggtagta ggaagaaacg attggctaaa gaagctctac gaggaatcaa
+      661 agaaagaatt cggaaaactc ttaagagaca aagcattgga gtgactcaaa agaaaatcat
+      721 agatgctata tttgacgaag acaaatggga attagcaaaa accctttgtt tgagctattt
+      781 aggtatcaaa ccacacattg aacaccattt tgtgatgact tatccgttaa tagcagttgt
+      841 caatgattgg gagggagcta atttctctaa tgaatgggtc tggattacgt tgtgcaataa
+      901 catccagaag atatcatttg cggcaccaga caacacttgg ccagaatttt tgatgcaatg
+      961 taacatccac ggagtgttac aatcacaggc tgaggatctt ggattgctag aagacatttt
+     1021 tggcatgaga ttttatcaaa gaaaagattt tggtaggttt gacaataaga aggtaacctt
+     1081 ggtctccaaa ccagcaaatc cgcttgctta caagtattgg gtaagacctc agaaaggcgc
+     1141 acctagagtt atcgaagggg ctagacgtgg tcaaatttcc tctaaacctt cactcaagtg
+     1201 tgcacggcgg tcatacaatc aatttactag cttagatgaa ctggagaagg cttatgtatc
+     1261 agtctctagt gagaattttg ttgaagagat taacaaagaa ttctcagctt atactgcttt
+     1321 acagctggaa ggat
+//

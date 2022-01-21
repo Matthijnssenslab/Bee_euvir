@@ -1,0 +1,62 @@
+LOCUS       BP49_NODE_105_length_2125_cov_10_8896_PB1 (reversed)        2125 bp    DNA     linear   UNA 21-JAN-2022
+DEFINITION  .
+ACCESSION   urn.local...49-ed8ri3o
+VERSION     urn.local...49-ed8ri3o
+KEYWORDS    .
+SOURCE
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     CDS             1..2112
+                     /codon_start=1
+                     /translation="PVRYGTRTKPVLDNVSRPYSYFKADGSLPNIKELKTGRKPKEEI
+                     NVEGPSSGYHHDSVIKFSKDFHRKYQHVFSKLKMWIEKDLPKCSYNVLAKGRQTYSFI
+                     QERNVPAAMALDETVEFLESNLGYRIGKSLLSYLQAVIDVLAMETTRKEQKFYKKGRI
+                     SDDETTTSEEESDDEGKPGPSKVMKRQPQEKVVKKITIITQESLLLHASRLGTMWKHF
+                     ERGRLNGRTIATPSMLLRGFVKLVEDAATVILEDIDSSGLPVGGEEKLAKLQSKLSSD
+                     RSPVTGELSGDQEKFNECLDPDAMRLMWTVFLQETGIEEWMIELFNVPFLLFKSKVAD
+                     LGEGLTYQCGKMTKVFPFGELESEYDYLKALLVPKEKLHGQNISCTLGMFMGMYNLTS
+                     TLLALIAADRPELPGNHVESSDDFIHWFYVKDMDTLFSQAETLRLNFKLVGVNMSPSK
+                     CVLIVPAGTGEFNSKYHNGDFVGNVATDLPSLVPSGKNPSTDLAMGLSVLKHSFNTGQ
+                     MCIGTISLCLRIFIKAYQYAYLAMGQTKRTRFFLENDLPVLLTNQGAKSVHSVSTLHL
+                     DEIALREHLGLLDARQISILLNPENSLVQTNEPMVSFRPENKMPVVIEDNSVGSIYKY
+                     QFTRNRTILNRPNRNQLKKEEEYQQMCGALEQAYPELLVSNVGIPGTVNEALYNRIFT
+                     LIERSNLPEETKKLLREKLDS"
+                     /product="Polymerase subunit PB1 (Fragment)"
+ORIGIN
+        1 cctgtaaggt acggtaccag aactaagcca gtgttagaca atgtgtctag accttacagt
+       61 tattttaaag ctgatggatc attacccaat attaaagaac taaagacagg gagaaaaccc
+      121 aaagaggaaa tcaatgttga gggacctagc agtggctatc atcatgacag tgtaataaag
+      181 ttttctaagg atttccatag aaaatatcaa catgtatttt ctaaactaaa aatgtggata
+      241 gaaaaagatc taccgaagtg tagttataat gtcttggcaa agggaagaca aacgtactca
+      301 ttcatacaag aaagaaatgt tcctgcagcg atggccctgg atgaaactgt agaattttta
+      361 gagtctaatc tagggtatcg cattgggaaa agtctcctct cctacctgca agcagtaata
+      421 gatgtactag caatggagac aactagaaag gaacagaagt tttacaaaaa aggaagaatt
+      481 tcagatgatg agaccaccac tagtgaagaa gagtctgatg atgaaggaaa gcctggacct
+      541 tccaaggtta tgaagagaca accacaagaa aaagtggtca agaagataac aataataacg
+      601 caggagtcat tgcttcttca tgcttctagg ttggggacta tgtggaagca tttcgaaaga
+      661 ggacggctaa atgggagaac catagcaaca ccaagcatgc ttttgagagg atttgtaaag
+      721 ttggttgaag atgctgctac tgtaatattg gaagacatag atagtagtgg tctcccagta
+      781 ggaggtgaag aaaagctggc aaagttacag agcaaactca gttcagaccg ttctcctgtt
+      841 actggagaat taagtggtga ccaagaaaag ttcaatgagt gtttggatcc agacgccatg
+      901 agacttatgt ggacagtgtt tcttcaagag accggaattg aggaatggat gattgaattg
+      961 tttaatgtac ccttcttatt attcaaaagc aaggtagcag atttgggaga gggattaaca
+     1021 tatcaatgtg gtaaaatgac aaaagtcttc ccttttggtg aacttgaatc tgaatatgat
+     1081 tatttgaagg cattactggt accaaaagag aaattacatg gtcaaaatat atcatgcact
+     1141 cttggaatgt ttatggggat gtacaattta acatctactc tgttggccct tatagctgct
+     1201 gatagacctg aattaccagg taatcatgta gaaagcagtg atgatttcat ccattggttt
+     1261 tatgttaaag atatggacac cttgtttagc caagcagaaa cattaagact caatttcaaa
+     1321 cttgttggag tgaatatgtc acctagtaag tgcgtgctaa tagtccctgc tggaacgggt
+     1381 gaatttaatt ccaagtatca taatggggat tttgttggaa acgtagctac agatctacca
+     1441 tcattagtac ctagcggtaa aaatcctagt accgatctag caatgggctt gagtgtattg
+     1501 aagcattctt tcaatactgg gcaaatgtgc attggtacta tttctttatg cctaagaatc
+     1561 ttcattaaag catatcaata tgcttattta gccatggggc aaactaaaag aacaagattc
+     1621 tttttggaaa atgatctgcc agtgttgcta actaatcagg gtgcaaaatc ggtacacagt
+     1681 gtatctacac ttcatttaga tgaaatagca ttgagagagc atctaggcct attagatgca
+     1741 agacaaataa gtatcctgct caatcctgag aattcacttg tgcagactaa tgagcctatg
+     1801 gtatcatttc gaccagaaaa caaaatgcct gtggttattg aagacaactc ggttggatca
+     1861 atttataaat atcagtttac acggaatagg actatattga atagacctaa ccgaaaccag
+     1921 ctgaaaaaag aggaagagta tcagcaaatg tgtggtgctc tggaacaagc gtaccctgaa
+     1981 ttattggttt ccaatgttgg tatacctggt acagttaatg aagctttgta taaccggatt
+     2041 tttaccctta tagaaagatc caatttgcca gaagaaacca aaaagttgtt gagagagaaa
+     2101 cttgactctt agtgtggagt tcata
+//

@@ -1,0 +1,41 @@
+LOCUS       BP49_NODE_292_length_960_cov_7_52775_M (reversed)         960 bp    DNA     linear   UNA 21-JAN-2022
+DEFINITION  .
+ACCESSION   urn.local...5d-ed8rl7f
+VERSION     urn.local...5d-ed8rl7f
+KEYWORDS    .
+SOURCE
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..9
+                     /standard_name="Annnotation trimmed in accordance with
+                     highly similar BLAST hit and respective Genbank entry."
+     CDS             10..831
+                     /translation="MEAMAMATSQKQIWCYCSVDIQERAKSMVMTRDSHLSNREWKMV
+                     KDMHGLAIGSKMELALVYKHLFAGMPEGFWSLKQSVATVGTSGELLYQGYKSQASEAG
+                     RSLYLKGVHPANIPALCYEIVKDVKTPLYLVQLLELLNLLNNMKPSHDDQLATLVSNS
+                     SIEEEQCETYDDHWISECIKISNTLDCVIEPLLKAKPVSSAVTAIHDANRELHRLVKS
+                     IGNAEQSYDKNIIYMGWIDAMLSIANSPDYLNLKGIAYSVIKNSFDRLNAIRSSL"
+                     /product="M protein"
+     CDS             828..959
+                     /codon_start=1
+                     /translation="VISLFKDPYTDLNDWSQLPEYTCIFSAFSEINFRFIGIIIVYEK
+                     "
+                     /product="Hypothetical protein"
+ORIGIN
+        1 ttaaaccaca tggaagcaat ggcaatggct acctcgcaaa aacagatctg gtgttattgc
+       61 tctgttgaca ttcaagagag ggctaaatct atggttatga ccagagacag ccacctttca
+      121 aatagagaat ggaagatggt taaggatatg catggattag ccattggtag taagatggaa
+      181 ctagcacttg tgtataagca tttgtttgca ggtatgcccg aaggattttg gtctttgaaa
+      241 caatctgtcg ctactgttgg cacctcagga gaactactct atcaaggata caagtcacaa
+      301 gcttctgaag ctggaaggag cctgtacctg aaaggagtgc atcctgccaa tatccctgct
+      361 ttatgctacg agatcgtaaa ggatgttaag acaccgctgt atctagtaca actccttgaa
+      421 ctgctcaatt tacttaataa catgaaacca agccatgatg accaacttgc tactttagtc
+      481 agtaacagta gcattgaaga ggaacaatgt gagacatatg atgaccattg gataagcgag
+      541 tgtattaaaa taagtaatac attagattgt gttattgaac cactacttaa agcaaaacct
+      601 gtgtccagcg cagtcactgc tatacatgat gccaatagag agctacatag actggtcaaa
+      661 agcattggaa atgcagaaca gtcctatgat aaaaacatta tttacatggg atggattgat
+      721 gccatgcttt ccattgctaa cagtcctgac tatctcaact tgaaaggaat agcgtactca
+      781 gtcatcaaga attcttttga taggctaaac gctataagaa gttcattgtg atctcattgt
+      841 ttaaggatcc ttatacagat ctgaatgact ggtcacaact gccagagtat acttgcattt
+      901 tttctgcatt ttctgaaatt aattttcgat ttataggtat tatcattgtt tatgaaaaaa
+//

@@ -1,0 +1,35 @@
+LOCUS       BP47_NODE_31_length_987_cov_183_669_M         987 bp    DNA     linear   UNA 21-JAN-2022
+DEFINITION  .
+ACCESSION   urn.local...3l-ed8rfsw
+VERSION     urn.local...3l-ed8rfsw
+KEYWORDS    .
+SOURCE
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     CDS             41..862
+                     /codon_start=1
+                     /translation="MEAMAMATSQKQIWCYCSVDIQERAKSMVMTRDSHLSNREWKMV
+                     KDMHGLAIGSKMELALVYKHLFAGMPEGFWSLKQSVATVGTSGELLYQGYKSQASEAG
+                     RSLYLKGVHPANIPALCYEIVKDVKTPLYLVQLLELLNLLNNMKPSHDDQLATLVSNS
+                     SIEEEQCETYDDHWISECIKISNTLDCVIEPLLKAKPVSSAVTAIHDANRELHRLVKS
+                     IGNAEQSYDKNIIYMGWIDAMLSIANSPDYLNLKGIAYSVIKNSFDRLNAIRSSL"
+                     /product="M protein"
+ORIGIN
+        1 gtgtttggtt gggtgctaat attataaaaa attaaaccac atggaagcaa tggcaatggc
+       61 tacctcgcaa aaacagatct ggtgttattg ctctgttgac attcaagaga gggctaaatc
+      121 tatggttatg accagagaca gccacctttc aaatagagaa tggaagatgg ttaaggatat
+      181 gcatggatta gccattggta gtaagatgga actagcactt gtgtataagc atttgtttgc
+      241 aggtatgccc gaaggatttt ggtctttgaa acaatctgtc gctactgttg gcacctcagg
+      301 agaactactc tatcaaggat acaagtcaca agcttctgaa gctggaagga gcctgtacct
+      361 gaaaggagtg catccagcca atatccctgc tttatgctac gagatcgtaa aggatgttaa
+      421 gacaccgctg tacctagtac aactccttga actgctcaat ttactcaata acatgaaacc
+      481 aagccatgat gaccaacttg ctactttagt cagtaacagt agcattgaag aggaacaatg
+      541 tgagacatat gatgatcatt ggataagcga gtgtattaaa ataagtaata cattagattg
+      601 tgttattgaa ccactactta aagcaaaacc tgtgtccagc gcagtcactg ctatacatga
+      661 tgccaataga gagctacata gactggtcaa aagcattgga aatgcagaac agtcctatga
+      721 taaaaacatt atttacatgg gatggattga tgccatgctt tccattgcta acagtcctga
+      781 ctatctcaac ttgaaaggaa tagcgtactc agtcatcaag aattcttttg ataggctaaa
+      841 cgctataaga agttcattgt gatctcattg tttaaggatc cttatacaga tctaaatgac
+      901 tggtcacaac tgccagagta tacttgcatt ttttctgcat tttctgaaat tattttccga
+      961 tttataggta ttatcattgt ttatgaa
+//
